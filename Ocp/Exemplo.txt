@@ -1,0 +1,11 @@
+- Considerando um serviço (classe) responsável por lidar com pagamentos de pedidos.
+- Vamos focar na funcionalidade de processamento de um Pedido. Para isso, precisamos verificar qual o método de pagamento usado para então saber como prosseguir.
+
+Um caso de um if else
+
+- E se um novo método passar a ser aceito?
+- Será necessário estender a estrutura de condição if utilizada;
+- Ou seja, a c/ novo método de pagamento aceito, a classe precisará ser alterada constantemente, resultando em uma complexa responsabilidade e com ponto de fragilidade.
+- Uma alteração errada poderá afetar o processamento de todos os meios de pagamento.
+
+O que fazer?? Criar novas abstrações!!

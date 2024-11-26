@@ -1,0 +1,20 @@
+- Uma classe responsável por lidar com boleti mde aluno
+- Vamos focar na funcionalidade de calcular a média do aluno no ano, em uma matéria.
+
+Olhando o SimpleAverageGradeCalculator.cs
+
+E se um novo algoritmo para cálculo da média for adicionado??
+
+- Talvez o dev quisesse usar da herança para ser mais rápido pois a classe original SimpleAverageGradeCalculator já inclui informações como Subject, Semester e Year.
+
+- Mas isso vai resultar em um problema no desenho da solução e irá ferir o principio de Substituição de Liskov.
+
+- Olhando a classe WeightAverageGradeCalculator.cs, a nova classe de cálculo, por usar herança, pode ser usada no lugar da original em algum lugar que espera SimpleAverageGradeCalculator e se for passado WeightAverageGradeCalculator, terá problemas (o calculo terá outro comportamento por ser override)!
+
+- o que fazer:
+	- Primeiro entender que são DUAS classes com métodos DIFERENTES de cálculo (evitando herdar e não cair na tenção de querer reaproveitar). Logo, não deveria ser possível usá-las uma no lugar da outro em seus respectivos cenários de uso!
+	- Podemos extrair uma interface comum, e fazer com que cada uma a implemente
+
+[Entendimento chave: a violação ocorre quando podemos inserir parametros validos devido a herança e não esperavamos por isso, então quem dirá se funcionaria o meétodo.]
+[Ex: Podiamos passar o WeightAverageGradeCalculator no construtor do DefaultYearConsolidateService, ou seja, devemos fazer que ele espere apenas pelo SimpleAverageGradeCalculator]
+[No caso, podemos sim passar o WeightAverageGradeCalculator ou o SimpleAverageGradeCalculator se o parametro espera por um IAverageGradeCalculator, mas num caso que seja exclusivamente o SimpleAverageGradeCalculator, não poderia passar o WeightAverageGradeCalculator, assim não substituindo o SimpleAverageGradeCalculator por não usar mais herança]

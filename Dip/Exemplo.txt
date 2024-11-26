@@ -1,0 +1,4 @@
+- Exemplificando um serviço de camada de aplicação responsável pela implementação de casos de uso relacionados a Pessoa.
+- Vamos focar na funcionalidade de cadastro de Pessoa. Nela, temos a dependência direto em componentes externos, como implementações de reposotório, e integração com APIs externas e message broker. [Dependência direta em componentes externos]
+
+- A classe PersonService depende de implementações diretamente. Que tal resolvermos isso??

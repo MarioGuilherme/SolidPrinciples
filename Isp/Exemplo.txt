@@ -1,0 +1,14 @@
+- Exemplificando uma interface responsável por definir métodos de um repositório genérico.
+- Nele, diversos métodos são definidos, como o de adição, atualização e consulta.
+
+Olhando a interface IRepository
+
+E se um repositório a ser implementado precisar apenas de métodos de leitura??
+
+- Nesse caso o repositório implementaria apenas o GetAll e GetById e os outros ficariam sem implementação.
+
+- Mas fere o principio de Segregação de Interfaces
+
+- Segundo o principio, um caminho recomendado seria segragar a interface IRepository<T> em intefaces menores.
+
+Ex: poderiam ser criadas 2 interfaces de repositorio: 1 para métodos de leitura e 1 para métodos de escrita.

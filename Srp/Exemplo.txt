@@ -1,0 +1,14 @@
+- Em um serviço de camada de aplicação responsável pela implementação de casos de uso relacionado a Pessoa.
+- Focaremos na funcionalidade de cadastro de Pessoa, para isso teremos várias operações associadas, mas nem todas estão diretamente relacionadas ao caso de uso em si.
+- Sendo essas operações:
+	- Mapear p/ uma entidade do domínio;
+	- Persistência dos dados c/ Repositório;
+	- Sincronizar dados feito pode um serviço a um ERP;
+	- Publicação ed um evento de cadastro realizado e muma fila do Azure Service Bus.
+
+O que fazer?
+	- Passos:
+		1 - Extrair Método;
+		2 - Extrair Classe;
+		3 - Extrair Interface;
+		4 - Usar as dependência para interface;
